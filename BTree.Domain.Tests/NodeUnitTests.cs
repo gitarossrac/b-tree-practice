@@ -46,4 +46,37 @@ public class NodeUnitTests
         // Assert
         actualResult.Should().BeFalse();
     }
+
+    [TestMethod]
+    public void Insert_ShouldInsertNewNodeRight_WhenValueIsGreaterThanCurrentNodeValue()
+    {
+        // Arrange
+        var node = new Node(0);
+        var insertedNodeValue = 1;
+
+        // Act
+        node.Insert(insertedNodeValue);
+
+        // Assert
+        node.Right.Should().NotBeNull();
+        node.Right.Value.Should().Be(insertedNodeValue);
+        node.Left.Should().BeNull();
+    }
+
+
+    [TestMethod]
+    public void Insert_ShouldInsertNewNodeLeft_WhenValueIsSmallerThanCurrentNodeValue()
+    {
+        // Arrange
+        var node = new Node(0);
+        var insertedNodeValue = -1;
+
+        // Act
+        node.Insert(insertedNodeValue);
+
+        // Assert
+        node.Left.Should().NotBeNull();
+        node.Left.Value.Should().Be(insertedNodeValue);
+        node.Right.Should().BeNull();
+    }
 }

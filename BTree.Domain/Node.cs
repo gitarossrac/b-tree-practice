@@ -19,27 +19,37 @@ public class Node
 	{
 		if (nodeValue < Value)
 		{
-			if (Left != null)
-			{
-				Left.Insert(nodeValue);
-			}
-			else
-			{
-				Left = new Node(nodeValue);
-			}
+			InsertLeft(nodeValue);
 		}
 		else if (nodeValue > Value)
 		{
-			if (Right != null)
-			{
-				Right.Insert(nodeValue);
-			}
-			else
-			{
-				Right = new Node(nodeValue);
-			}
+			InsertRight(nodeValue);
 		}
 		
 		// else already in the tree
+	}
+
+	private void InsertLeft(int nodeValue)
+	{
+		if (Left != null)
+		{
+			Left.Insert(nodeValue);
+		}
+		else
+		{
+			Left = new Node(nodeValue);
+		}
+	}
+
+	private void InsertRight(int nodeValue)
+	{
+		if (Right != null)
+		{
+			Right.Insert(nodeValue);
+		}
+		else
+		{
+			Right = new Node(nodeValue);
+		}
 	}
 }
