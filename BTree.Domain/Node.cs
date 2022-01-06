@@ -13,6 +13,8 @@ public class Node
 		Value = @value;
 	}
 	
+	public bool IsLeaf => Left == null && Right == null;
+
 	public void Insert(int nodeValue)
 	{
 		if (nodeValue < Value)
