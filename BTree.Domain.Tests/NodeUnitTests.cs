@@ -63,7 +63,6 @@ public class NodeUnitTests
         node.Left.Should().BeNull();
     }
 
-
     [TestMethod]
     public void Insert_ShouldInsertNewNodeLeft_WhenValueIsSmallerThanCurrentNodeValue()
     {
